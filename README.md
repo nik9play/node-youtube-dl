@@ -14,6 +14,8 @@ With [npm](https://www.npmjs.com/) do:
 npm install youtube-dl
 ```
 
+(you to download youtube-dl and ffmpeg binaries)
+
 ## Usage
 
 ### Downloading videos
@@ -21,6 +23,9 @@ npm install youtube-dl
 ``` js
 var fs = require('fs');
 var youtubedl = require('youtube-dl');
+
+youtubedl.setPath("./bin")
+
 var video = youtubedl('http://www.youtube.com/watch?v=90AiXO1pAiA',
   // Optional arguments passed to youtube-dl.
   ['--format=18'],
@@ -51,6 +56,8 @@ saving to T-ara - Number Nine - MV - 티아라-Seku9G1kT0c.mp4
 var youtubedl = require('./');
 var fs = require('fs');
 var output = 'myvideo.mp4';
+
+youtubedl.setPath("./bin")
 
 var downloaded = 0;
 if (fs.existsSync(output)) {
@@ -123,6 +130,7 @@ finished downloading
 ``` js
 var youtubedl = require('youtube-dl');
 var url = 'http://www.youtube.com/watch?v=WKsjaOqDXgg';
+youtubedl.setPath("./bin")
 // Optional arguments passed to youtube-dl.
 var options = ['--username=user', '--password=hunter2'];
 youtubedl.getInfo(url, options, function(err, info) {
@@ -154,6 +162,7 @@ You can use an array of urls to produce an array of response objects with matchi
 
 ``` js
 var youtubedl = require('youtube-dl');
+youtubedl.setPath("./bin")
 var url1 = 'http://www.youtube.com/watch?v=WKsjaOqDXgg';
 var url2 = 'https://vimeo.com/6586873';
 youtubedl.getInfo([url1, url2], function(err, info) {
@@ -169,6 +178,7 @@ youtubedl.getInfo([url1, url2], function(err, info) {
 ``` js
 var youtubedl = require('youtube-dl');
 var url = 'https://youtu.be/PizwcirYuGY';
+youtubedl.setPath("./bin")
 
 var options = {
   // Write automatic subtitle file (youtube only)
@@ -192,6 +202,7 @@ youtubedl.getSubs(url, options, function(err, files) {
 ``` js
 var youtubedl = require('youtube-dl');
 var url = 'https://youtu.be/PizwcirYuGY';
+youtubedl.setPath("./bin")
 
 var options = {
   // Downloads available thumbnail.
@@ -214,6 +225,7 @@ For more usage info on youtube-dl and the arguments you can pass to it, do `yout
 var path = require('path');
 var fs   = require('fs');
 var ytdl = require('youtube-dl');
+youtubedl.setPath("./bin")
 
 function playlist(url) {
 
@@ -255,6 +267,7 @@ playlist('https://www.youtube.com/playlist?list=PLEFA9E9D96CB7F807');
 
 ``` js
 var youtubedl = require('youtube-dl');
+youtubedl.setPath("./bin")
 youtubedl.getExtractors(true, function(err, list) {
   console.log('Found ' + list.length + ' extractors');
   for (var i = 0; i < list.length; i++) {
@@ -292,7 +305,7 @@ Since the youtube-dl binary is updated regularly, you can run `npm run update` t
 
 ``` js
 var downloader = require('../lib/downloader');
-
+youtubedl.setPath("./bin")
 downloader('path/to-binary', function error(err, done) {
   'use strict';
   if (err) { return console.log(err.stack); }
