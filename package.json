@@ -6,7 +6,7 @@
         "video",
         "download"
     ],
-    "version": "1.12.2",
+    "version": "1.0.0",
     "repository": {
         "type": "git",
         "url": "git://github.com/nik9play/node-youtube-dl.git"
