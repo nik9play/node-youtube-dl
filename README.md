@@ -1,8 +1,6 @@
 # youtube-dl
 
-[![Build Status](https://travis-ci.org/przemyslawpluta/node-youtube-dl.svg?branch=master)](https://travis-ci.org/przemyslawpluta/node-youtube-dl) [![npm version](https://badge.fury.io/js/youtube-dl.svg)](https://badge.fury.io/js/youtube-dl) [![Dependency Status](https://gemnasium.com/przemyslawpluta/node-youtube-dl.svg)](https://gemnasium.com/przemyslawpluta/node-youtube-dl)
-
-Download videos from youtube in node.js using [youtube-dl](http://rg3.github.com/youtube-dl/).
+Download videos from youtube and other services in node.js using [youtube-dl](http://rg3.github.com/youtube-dl/).
 
 If you're only interested in downloading only from youtube, you should consider using [pure Javascript youtube downloading module](https://github.com/fent/node-ytdl).
 
